@@ -1,5 +1,6 @@
 import java.awt.*;
 import java.awt.event.*;
+import java.text.DecimalFormat;
 import javax.swing.*;
 
 public class Another_Practice {
@@ -16,11 +17,14 @@ public class Another_Practice {
     }
 }
 
-class Frame extends JFrame{
+class Frame extends JFrame implements ActionListener{
     
     JTextField textNumber;
     JButton button1,button2,button3,button4,button5,button6,button7,button8,button9,button0;
-    JButton plus, minus, times, divide, subtract, equal;
+    JButton plus, minus, times, divide, subtract, clear, equal;
+    
+    private double value;
+    private String op;
     
     public Frame(){
         
@@ -33,37 +37,55 @@ class Frame extends JFrame{
         textNumber = new JTextField();
         button1 = new JButton();
         button1.setFocusPainted(false);
+        button1.addActionListener(this);
         button2 = new JButton();
         button2.setFocusPainted(false);
+        button2.addActionListener(this);
         button3 = new JButton();
         button3.setFocusPainted(false);
+        button3.addActionListener(this);
         button4 = new JButton();
         button4.setFocusPainted(false);
+        button4.addActionListener(this);
         button5 = new JButton();
         button5.setFocusPainted(false);
+        button5.addActionListener(this);
         button6 = new JButton();
         button6.setFocusPainted(false);
+        button6.addActionListener(this);
         button7 = new JButton();
         button7.setFocusPainted(false);
+        button7.addActionListener(this);
         button8 = new JButton();
         button8.setFocusPainted(false);
+        button8.addActionListener(this);
         button9 = new JButton();
         button9.setFocusPainted(false);
+        button9.addActionListener(this);
         button0 = new JButton();
         button0.setFocusPainted(false);
+        button0.addActionListener(this);
         divide = new JButton();
         divide.setFocusPainted(false);
+        divide.addActionListener(this);
         plus = new JButton();
         plus.setFocusPainted(false);
+        plus.addActionListener(this);
         minus = new JButton();
         minus.setFocusPainted(false);
+        minus.addActionListener(this);
         subtract = new JButton();
         subtract.setFocusPainted(false);
+        subtract.addActionListener(this);
         times = new JButton();
         times.setFocusPainted(false);
+        times.addActionListener(this);
+        clear = new JButton();
+        clear.setFocusPainted(false);
+        clear.addActionListener(this);
         equal = new JButton();
         equal.setFocusPainted(false);
-        
+        equal.addActionListener(this);
         
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.fill = GridBagConstraints.BOTH;
@@ -145,10 +167,12 @@ class Frame extends JFrame{
         button0.setText("0");
         gbc.gridx = 0;
         gbc.gridy = 4;
-        gbc.gridwidth = 2;
         add(button0, gbc);
-        
-        gbc.gridwidth = 1;
+       
+        clear.setText("C");
+        gbc.gridx = 1;
+        gbc.gridy = 4;
+        add(clear, gbc);
         
         equal.setText("=");
         gbc.gridx = 2;
@@ -160,6 +184,11 @@ class Frame extends JFrame{
         gbc.gridy = 4;
         add(plus, gbc);
         
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
         
     }
+   
 }
